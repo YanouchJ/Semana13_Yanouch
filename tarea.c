@@ -25,6 +25,34 @@ int main(int argc, char const *argv[])
 
     struct alumno datosAlumno[num];
 
+    puts("\nINGRESO DE DATOS");
+    for (int i = 0; i < num; i++)
+    {
+        printf("DATOS ALUMNO %d\n", i+1);
+        printf("Numero de matricula: ");
+        scanf("%d", &datosAlumno[i].matricula);
+        printf("Nombre: ");
+        scanf("%s", datosAlumno[i].nombre);
+        printf("Direccion: ");
+        scanf("%s", datosAlumno[i].direccion);
+        printf("Carrera: ");
+        scanf("%s", datosAlumno[i].carrera);
+        printf("Promedio: ");
+        scanf("%f", &datosAlumno[i].promedio);
+    }
+    puts("\nDATOS INGRESADOS");
+    for (int i = 0; i < num; i++)
+    {
+        printf("\nDATOS ALUMNO %d\n", i + 1);
+        printf("Numero de matricula: %d", datosAlumno[i].matricula);
+        printf("\nNombre: %s", datosAlumno[i].nombre);
+        printf("\nDireccion: %s", datosAlumno[i].direccion);
+        printf("\nCarrera: %s", datosAlumno[i].carrera);
+        printf("\nPromedio: %.2f", datosAlumno[i].promedio);
+    }
+    
+    
+
 
 
     return 0;

@@ -35,9 +35,10 @@ int main(int argc, char const *argv[])
     {
         printf("\nDATOS ALUMNO %d\n\n", i + 1);
         printf("Numero de matricula: ");
-        scanf("%d", &datosAlumno[i].matricula);
         fflush(stdin);
+        scanf("%d", &datosAlumno[i].matricula);
         printf("Nombre: ");
+        fflush(stdin);
         fgets(datosAlumno[i].nombre,50,stdin);
         printf("Direccion: ");
         fgets(datosAlumno[i].direccion,50,stdin);
@@ -45,6 +46,7 @@ int main(int argc, char const *argv[])
         fgets(datosAlumno[i].carrera,50,stdin);
         printf("Promedio: ");
         scanf("%f", &datosAlumno[i].promedio);
+        fflush(stdin);
     }
     puts("\n----------------------------------------");
     // Salida de los datos ingresados

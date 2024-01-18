@@ -13,6 +13,19 @@ int main(int argc, char const *argv[])
     int num;
     printf("Alumnos a registrar: ");
     scanf("%d", &num);
-    
+
+    struct alumno
+    {
+        int matricula;
+        char nombre[50];
+        char direccion[50];
+        char carrera[50];
+        float promedio;
+    };
+
+    struct alumno datosAlumno[num];
+
+
+
     return 0;
 }

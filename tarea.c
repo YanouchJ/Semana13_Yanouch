@@ -8,12 +8,16 @@ fflush();
 
 NOTA: no quemar los datos en el código*/
 #include <stdio.h>
+#include <string.h>
+
 int main(int argc, char const *argv[])
 {
     int num;
+    // Ingreso del numero de alumnos que se van a registrar
     printf("Alumnos a registrar: ");
     scanf("%d", &num);
 
+    // Estructura para los datos del alumno
     struct alumno
     {
         int matricula;
@@ -23,37 +27,40 @@ int main(int argc, char const *argv[])
         float promedio;
     };
 
+    // Declaración de la estructura para el ingreso de datos del alumno
     struct alumno datosAlumno[num];
 
-    puts("\nINGRESO DE DATOS");
+    // Ingreso de datos del alumno
     for (int i = 0; i < num; i++)
     {
-        printf("DATOS ALUMNO %d\n", i+1);
+        printf("\nDATOS ALUMNO %d\n\n", i + 1);
         printf("Numero de matricula: ");
         scanf("%d", &datosAlumno[i].matricula);
+        fflush(stdin);
         printf("Nombre: ");
-        scanf("%s", datosAlumno[i].nombre);
+        fgets(datosAlumno[i].nombre,50,stdin);
         printf("Direccion: ");
-        scanf("%s", datosAlumno[i].direccion);
+        fgets(datosAlumno[i].direccion,50,stdin);
         printf("Carrera: ");
-        scanf("%s", datosAlumno[i].carrera);
+        fgets(datosAlumno[i].carrera,50,stdin);
         printf("Promedio: ");
         scanf("%f", &datosAlumno[i].promedio);
     }
-    puts("\nDATOS INGRESADOS");
+    puts("\n----------------------------------------");
+    // Salida de los datos ingresados
     for (int i = 0; i < num; i++)
     {
-        printf("\nDATOS ALUMNO %d\n", i + 1);
-        printf("Numero de matricula: %d", datosAlumno[i].matricula);
-        printf("\nNombre: %s", datosAlumno[i].nombre);
-        printf("\nDireccion: %s", datosAlumno[i].direccion);
-        printf("\nCarrera: %s", datosAlumno[i].carrera);
-        printf("\nPromedio: %.2f", datosAlumno[i].promedio);
+        printf("\n\tDATOS ALUMNO %d\n", i + 1);
+        printf("Numero de matricula: %d\n", datosAlumno[i].matricula);
+        printf("\nNombre: ");
+        puts(datosAlumno[i].nombre);
+        printf("Direccion: ");
+        puts(datosAlumno[i].direccion);
+        printf("Carrera: ");
+        puts(datosAlumno[i].carrera);
+        printf("Promedio: %.2f\n\n", datosAlumno[i].promedio);
     }
-    
-    
-
-
+    puts("\n----------------------------------------");
 
     return 0;
 }
